@@ -29,6 +29,14 @@ void floydWarshall(const vector<vector<int>>& graph) {
                 }
             }
         }
+        //! For report
+        //! cout << "\nA^"<< k + 1 << endl;
+        //! for (int i = 0; i < V; ++i) {
+        //!     for (int j = 0; j < V; ++j) {
+        //!         cout << dist[i][j] << " ";
+        //!     }
+        //!     cout << endl;
+        //! }
     }
 
     //? Stop timing
@@ -63,7 +71,7 @@ void floydWarshall(const vector<vector<int>>& graph) {
     cout << "\nPaths from vertex A:\n";
     for (int j = 0; j < V; ++j) {
         if (startVertex != j) {
-            if (next[startVertex][j] == -1) {
+            if (next[startVertex][j] == -1) { 
                 cout << "No path from A to " << char('A' + j) << endl;
             } else {
                 cout << "Path from A to " << char('A' + j) << ": ";
@@ -77,12 +85,10 @@ void floydWarshall(const vector<vector<int>>& graph) {
         }
     }
 
-    // Print time taken
     cout << "\nTime taken by Floyd-Warshall algorithm: " << duration.count() << " microseconds" << endl;
 }
 
 int main() {
-    floydWarshall(G5);
-    
+    floydWarshall(G2);
     return 0;
 }
